@@ -1,0 +1,68 @@
+<head>
+    <!-- styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css" integrity="sha384-s4RLYRjGGbVqKOyMGGwfxUTMOO6D7r2eom7hWZQ6BjK2Df4ZyfzLXEkonSm0KLIQ" crossorigin="anonymous">
+    <link rel="stylesheet/less" type="text/css" href="https://cdn.jsdelivr.net/gh/devosoft/Empirical@26dbbe3/include/emp/prefab/DefaultPrefabStyles.less" integrity="sha384-sq4+UmPTB19bGYpxuyAuWqL98Vu3/sP0K189i4Q9YjtoT75W6Y8SSaAE1hfsMfVq" crossorigin="anonymous">
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/4.1.3/less.min.js" integrity="sha512-6gUGqd/zBCrEKbJqPI7iINc61jlOfH5A+SluY15IkNO1o4qP1DEYjQBewTB4l0U4ihXZdupg8Mb77VxqE+37dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js" integrity="sha384-lSDOH2m65GTr3YMjQmtQouX6jV/Xb6y1HNztdW5HsGrpSXTLt6CL/BesSu+6M0ow" crossorigin="anonymous"></script>
+
+    <!-- feature specific scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/devosoft/Empirical@26dbbe3/include/emp/prefab/HighlightJS.js" integrity="sha384-Zfh3BfaS9t0VPODZ8NapeEOmrLkeT64Q28jbnxFLJ6ebS23iYWGoydQTNkp1qLUl" crossorigin="anonymous"></script>
+
+    <!-- Added -->
+    <script type="text/javascript" src="web.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="target"> </div>
+                <div id="buttons"> </div>
+            </div>
+            <div class="col">
+                <div id="settings"></div>
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                Hello! This is a GUI representation of  a replication of "Spatial resource heterogeneity creates local hotspots of evolutionary potential" by Emily Dolson and Charles Ofria (2017). <br>
+                "Hotspot" cells are represented with circles, and regular cells are rectangles. <br>
+                "Hotspot" refers to places where a particular trait might evolve more easily, due to cpu cycles. <br>
+                We expected that hotspot cells (the circles) would have higher rates of completed tasks, but that doesn't seem to be the case, though they do accrue points more quickly. 
+                Colors indicate which task a cell has successfully solved, black that an organism hasn't solved anything, and white that the cell is empty and without an organism. The exact color-task equivalences are listed at the bottom of this paragraph
+                </p><p>
+                The representation above focus on the movement of the hotspot on the grid. <br>
+                We implemented nine basic tasks to run this program. <br>
+                The organisms gain 30 points when the NOT task was solved, because it is very rarely solved. <br>
+                For other tasks (NAND, AND, ORN, OR, ANDN, NOR, XOR, EQU), the organisms gain 15 points <br>
+                </p><p>
+                The user can set 5 different features using the configuration panel. <br>
+                Num Orgs : Determines the number of starting organisms on the grid. <br>
+                Required Points : Determines the number of points the organisms need to reproduce. <br>
+                Moving Hotspot Req : Per how many updates does the hotspot move (0 for never) <br>
+                Random Seed : Determines the random seed of the simulation. <br>
+                Num Possible Tasks : Determines the number of tasks possible in the simulation. <br> 
+                Some possible things to try include shifting the number of require points upwards/downwards and seeing how visible activity changes and reducing the number of possible tasks to focus on just a few; tasks are added in the order (first to last): AND, EQU, XOR, NOR, ANDN, OR, ORN, NAND, and NOT.<br>
+
+                The colors of completed tasks are: 
+                                                                                                <ul>
+                                                                                                    <li style="background-color: red;"> red : NOT</li>
+                                                                                                    <li style="background-color: blue;"> blue : NAND</li:>
+                                                                                                    <li style="background-color: yellow;"> yellow : AND</li>
+                                                                                                    <li style="background-color: #009900;"> #009900 : ORN</li>
+                                                                                                    <li style="background-color: #66ffff;"> #66ffff : OR</li>
+                                                                                                    <li style="background-color: #006699;"> #006699 : ANDN</li>
+                                                                                                    <li style="background-color: #3366ff;"> #3366ff : NOR</li>
+                                                                                                    <li style="background-color: #ccffcc;"> #ccffcc : XOR</li>
+                                                                                                    <li style="background-color: green;"> green : EQU</li>
+                                                                                                </ul>
+            </p>
+        </div>
+    </div>
+</body>
